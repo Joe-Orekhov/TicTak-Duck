@@ -1,0 +1,43 @@
+.BattleFieid{
+  color: blueviolet;
+  padding: 40px;
+  background-color: gainsboro;
+}
+.BattleFieid:hover {
+  background-color: rgb(207, 204, 204);
+}
+
+.sideHeaders{
+  color:rgba(218, 45, 45, 0.849);
+}
+
+.topHeaders{
+  color: rgb(0, 132, 255);
+}
+
+#board{
+  margin: auto;
+  width: 99%;
+  height: 99%;
+}
+#tickTack{
+  margin: auto;
+}
+
+.playerIMG{
+  width: 180px;
+  height: auto;
+}
+
+#playerOne{
+  position: absolute;
+  left: 20px;
+  top: 100px;
+  
+}
+
+#playerTwo{
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
