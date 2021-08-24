@@ -14,8 +14,18 @@
   
   const boardArray = Array.from(boardGame)
 
+  let currentPlayer = 'PlayerOne';
+
   boardArray.forEach((square)=>{
-    square.addEventListener('click', ()=>{
-      square.innerHTML ="X"
+    square.addEventListener('click', (e) =>{
+      if(currentPlayer === 'PlayerOne'){
+        e.target.innerText = "X"
+        currentPlayer = "PlayerTwo"
+      }else if(currentPlayer === 'PlayerTwo'){
+        currentPlayer = "PlayerOne"
+        e.target.innerText = "O"
+      }
     })
   })
+
+  
