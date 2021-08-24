@@ -57,3 +57,13 @@
 
 
 
+let player1 = document.write(prompt("Player 1 enter your name", "Harry Potter"));
+let player2 = prompt("Player 2 enter your name", "Indiana Jones");
+
+let text;
+if (person == null || person == "") {
+  text = "User cancelled the prompt.";
+} else {
+  text = "Hello " + person + "! How are you today?";
+}
+
