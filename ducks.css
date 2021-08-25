@@ -41,3 +41,20 @@
   right: 50px;
   top: 100px;
 }
+
+form{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+form div{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* #name2{
+  display: block;
+  align-items: flex-end;
+} */

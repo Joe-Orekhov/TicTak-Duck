@@ -1,0 +1,17 @@
+{
+    "avatar": [
+        {
+            "id": 1,
+            "name": "Player 1",
+            "picture": "img",
+            "record": 0
+    
+        },
+        {
+            "id": 2,
+            "name": "Player 2",
+            "picture": "img",
+            "record": 0
+        }
+    ]
+}
