@@ -31,38 +31,25 @@
 
 #playerOne{
   position: absolute;
-  left: 50px;
+  left: 25px;
   top: 100px;
-  
 }
 
 #playerTwo{
   position: absolute;
-  right: 50px;
+  right: 25px;
   top: 100px;
 }
 
-form{
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-}
-
-
-#player1Name{
-    position: absolute;
-    left: 90px;
-    top: 235px;
-}
-
-#player2Name{
+#Player1{
   position: absolute;
-  right: 90px;
-  top: 235px;
+  left: 20px;
+  top: 125px;
 }
 
+}
 
-/* #name2{
-  display: block;
-  align-items: flex-end;
-} */
+#header-title{
+  text-align: center;
+  color: rgb(129, 255, 255);
+}
