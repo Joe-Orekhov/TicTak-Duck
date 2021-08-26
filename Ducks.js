@@ -1,3 +1,18 @@
+  // fetch("http://localhost:3000/avatar")
+  // .then(resp => resp.json())
+  // .then(data => {
+  //     // console.log(data)
+  //     const PlayerOne = document.querySelector('#playerOne').src
+  //     console.log(PlayerOne)
+  //     const PlayerTwo = document.querySelector('#playerTwo').src
+  //     console.log(PlayerTwo)
+  // })
+
+    fetch()
+  
+  
+  
+  
   const A1 = document.querySelector('td#A1.BattleFieid')
   const A2 = document.querySelector('td#A2.BattleFieid')
   const A3 = document.querySelector('td#A3.BattleFieid')
@@ -57,13 +72,19 @@
 
 
 
-let player1 = document.write(prompt("Player 1 enter your name", "Harry Potter"));
+let player1 = prompt("Player 1 enter your name", "Harry Potter");
+let player1Name = document.getElementById("player1Name")
+player1Name.innerText = player1
 let player2 = prompt("Player 2 enter your name", "Indiana Jones");
+let player2Name = document.getElementById("player2Name")
+player2Name.innerText = player2
 
-let text;
-if (person == null || person == "") {
-  text = "User cancelled the prompt.";
-} else {
-  text = "Hello " + person + "! How are you today?";
-}
+
+
+// let text;
+// if (person == null || person == "") {
+//   text = "User cancelled the prompt.";
+// } else {
+//   text = "Hello " + person + "! How are you today?";
+// }
 

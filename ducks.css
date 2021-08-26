@@ -48,9 +48,17 @@ form{
   align-content: center;
 }
 
-form div{
-  display: flex;
-  justify-content: space-between;
+
+#player1Name{
+    position: absolute;
+    left: 90px;
+    top: 235px;
+}
+
+#player2Name{
+  position: absolute;
+  right: 90px;
+  top: 235px;
 }
 
 
