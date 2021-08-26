@@ -1,26 +1,42 @@
-const A1 = document.querySelector('td#A1.BattleFieid')
-
-const A2 = document.querySelector('td#A2.BattleFieid')
-
-const A3 = document.querySelector('td#A3.BattleFieid')
-
-const B1 = document.querySelector('td#B1.BattleFieid')
-const B2 = document.querySelector('td#B2.BattleFieid')
-const B3 = document.querySelector('td#B3.BattleFieid')
-
-const C1 = document.querySelector('td#C1.BattleFieid')
-const C2 = document.querySelector('td#C2.BattleFieid')
-const C3 = document.querySelector('td#C3.BattleFieid')
-
-  const boardGame = document.getElementsByClassName('BattleFieid')
-  console.log(parseInt("1"))
-
-  
-  const boardArray = Array.from(boardGame)
+fetch('http://localhost:3000/avatar')
+.then(resp=> resp.json())
+.then(ducksHomes=> {
+  avatarSelector(ducksHomes)
+})
 
 
-  let currentPlayer = 'PlayerOne';
+const player1Name = document.getElementById('Player1')
+const player2Name = document.getElementById('Player2')
+  function userNames(){
+  let player1 = prompt("Player 1 enter your name", "Harry Potter");
+  let player2 = prompt("Player 2 enter your name", "Indiana Jones");
 
+  player1Name.innerText = player1
+  player2Name.innerText = player2
+  }
+
+const boardGame = document.getElementsByClassName('BattleFieid')
+const boardArray = Array.from(boardGame)
+let currentPlayer = 'PlayerOne';
+
+const duckIMG1 = document.querySelector('#playerOneIMG')
+const duckIMG2 = document.querySelector('#playerTwoIMG')
+
+  function avatarSelector(ducksHomes){
+
+      duckIMG1.addEventListener('click',()=>{ 
+        const duckPicker = Math.floor(Math.random() * 6) + 0   
+        duckIMG1.src = ducksHomes[parseInt(duckPicker)].image
+      })
+      duckIMG2.addEventListener('click',()=>{
+        const duckPicker = Math.floor(Math.random() * 6) + 0
+        duckIMG2.src = ducksHomes[parseInt(duckPicker)].image
+      })
+
+  }
+
+
+  function gamePlay(){
   boardArray.forEach((square)=>{
     square.addEventListener('click', (e) =>{
       let beforePlay = e.target.innerText
@@ -30,11 +46,9 @@ const C3 = document.querySelector('td#C3.BattleFieid')
         if(beforePlay == ""){
           e.target.innerText = "X"
           currentPlayer = "PlayerTwo"
-          findWinner(e.target)
         }else{
           alert('SORRY CANT PLAY THERE')
         };
-        // playerWins(e, square)
       }else if(currentPlayer === 'PlayerTwo'){
 
         if(beforePlay == ""){
@@ -43,36 +57,37 @@ const C3 = document.querySelector('td#C3.BattleFieid')
         }else{
           alert('SORRY CANT PLAY THERE')
         };
-        // playerWins(e, square)
-        findWinner(e.target)
       };
     })
   })
+  }
 
+userNames()
+avatarSelector()
+gamePlay()
+// const winnigPlays =[
+//    [0, 1, 2], 
+//    [3, 4, 5], 
+//    [6, 7, 8], 
+//    [0, 3, 6],
+//    [1, 4, 7], 
+//    [2, 5, 8], 
+//    [2, 4, 6], 
+//    [0, 4, 8], 
+// ]
+// const ran = [0, 4, 8]
 
-const winnigPlays =[
-   [0, 1, 2], 
-   [3, 4, 5], 
-   [6, 7, 8], 
-   [0, 3, 6],
-   [1, 4, 7], 
-   [2, 5, 8], 
-   [2, 4, 6], 
-   [0, 4, 8], 
-]
-const ran = [0, 4, 8]
+// function findWinner(winnigPlays){
+//   winnigPlays.forEach(win =>{
+//     console.log(win)
+//   })
+//   for(let i = 0; i <= 7; ++i){
+//  winnigPlays[i]
+// }}
+// findWinner()
 
-function findWinner(winnigPlays){
-  winnigPlays.forEach(win =>{
-    console.log(win)
-  })
-  for(let i = 0; i <= 7; ++i){
- winnigPlays[i]
-}}
-findWinner()
-
-const xSelections =['', '', '', '','' ,'', '',]
-const oSelections =['', '', '', '','' ,'', '',]
+// const xSelections =['', '', '', '','' ,'', '',]
+// const oSelections =['', '', '', '','' ,'', '',]
 
 // function findWinner(Place){
 //   if(Place.innerText == "X"){
