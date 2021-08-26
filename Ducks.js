@@ -63,6 +63,15 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
   })
   }
 
+  function newGameButton(){
+      const newGame = document.querySelector('#newGame')
+      const resetButton = document.createElement('button')
+      resetButton.innerText = 'New Game'
+      resetButton.id = 'resetButton'
+      newGame.append(resetButton)
+      console.log(resetButton)
+  }
+
 userNames()
 avatarSelector()
 gamePlay()
