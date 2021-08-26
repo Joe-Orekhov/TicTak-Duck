@@ -5,6 +5,7 @@ fetch('http://localhost:3000/avatar')
 })
 
 
+
 const player1Name = document.getElementById('Player1')
 const player2Name = document.getElementById('Player2')
   function userNames(){
