@@ -5,9 +5,22 @@
       <script defer src="Ducks.js"></script>
   </head>
   <body>
+    <div id="header">
+      <H1 id='header-title'>TIC - TAK - TOE</H1>
+    </div>
+    
     <div id="board">
-      <img id="playerOne" class="playerIMG" src="Images/PrePlayerIcon.png" alt="player One Image">
-      <img id="playerTwo" class="playerIMG" src="Images/PrePlayerIcon.png" alt="Player Two Image">
+
+      <div id="playerOne">
+        <img id="playerOneIMG" class="playerIMG" src="Images/PrePlayerIcon.png" alt="player One Image">
+        <h2 id="Player1"></h2>
+      </div>
+
+      <div id="playerTwo">
+        <img id="playerTwoIMG" class="playerIMG" src="Images/PrePlayerIcon.png" alt="Player Two Image">
+        <h2 id="Player2"></h2>
+      </div>
+      
       <table id="tickTack">
         <tr>
           <th id="cornerHeader"> </th>
@@ -17,21 +30,21 @@
         </tr>
         <tr>
           <th class="topHeaders">A</th>
-          <td class="BattleFieid" id="A1">A1</td>
-          <td class="BattleFieid" id="A2">A2</td>
-          <td class="BattleFieid" id="A3">A3</td>
+          <td class="BattleFieid" id="0"></td>
+          <td class="BattleFieid" id="1"></td>
+          <td class="BattleFieid" id="2"></td>
         </tr>
         <tr>
           <th class="topHeaders">B</th>
-          <td class="BattleFieid" id="B1">B1</td>
-          <td class="BattleFieid" id="B2">B2</td>
-          <td class="BattleFieid" id="B3">B3</td>
+          <td class="BattleFieid" id="3"></td>
+          <td class="BattleFieid" id="4"></td>
+          <td class="BattleFieid" id="5"></td>
         </tr>
         <tr>
           <th class="topHeaders">C</th>
-          <td class="BattleFieid" id="C1">C1</td>
-          <td class="BattleFieid" id="C2">C2</td>
-          <td class="BattleFieid" id="C3">C3</td>
+          <td class="BattleFieid" id="6"></td>
+          <td class="BattleFieid" id="7"></td>
+          <td class="BattleFieid" id="8"></td>
         </tr>
       </table>
     </div>

@@ -31,30 +31,32 @@
 
 #playerOne{
   position: absolute;
-  left: 50px;
+  left: 25px;
   top: 100px;
-  
 }
 
 #playerTwo{
   position: absolute;
-  right: 50px;
+  right: 25px;
   top: 100px;
 }
 
-form{
-  display: flex;
-  flex-direction: row;
-  align-content: center;
+#Player1{
+  position: absolute;
+  left: 20px;
+  top: 125px;
+}
+#Player2{
+  position: absolute;
+  right: 20px;
+  top: 125px;
+}
+#header{
+  
+background-color: rgb(49, 49, 49);
 }
 
-form div{
-  display: flex;
-  justify-content: space-between;
+#header-title{
+  text-align: center;
+  color: rgb(129, 255, 255);
 }
-
-
-/* #name2{
-  display: block;
-  align-items: flex-end;
-} */
