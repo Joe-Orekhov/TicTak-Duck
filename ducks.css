@@ -19,6 +19,7 @@
   margin: auto;
   width: 99%;
   height: 99%;
+  border: 10px solid rgb(218, 9, 9)
 }
 #tickTack{
   margin: auto;
@@ -33,12 +34,14 @@
   position: absolute;
   left: 25px;
   top: 100px;
+  border: 10px solid rgb(218, 9, 9);
 }
 
 #playerTwo{
   position: absolute;
   right: 25px;
   top: 100px;
+  border: 10px solid rgb(9, 93, 218);
 }
 
 #Player1{
@@ -60,3 +63,4 @@ background-color: rgb(49, 49, 49);
   text-align: center;
   color: rgb(129, 255, 255);
 }
+

@@ -7,9 +7,10 @@ fetch('http://localhost:3000/avatar')
 
 const player1Name = document.getElementById('Player1')
 const player2Name = document.getElementById('Player2')
+
   function userNames(){
-  let player1 = prompt("Player 1 enter your name", "Harry Potter");
-  let player2 = prompt("Player 2 enter your name", "Indiana Jones");
+  let player1 = prompt("Player 1 enter your name", "Kyle");
+  let player2 = prompt("Player 2 enter your name", "Kate");
 
   player1Name.innerText = player1
   player2Name.innerText = player2
@@ -17,6 +18,7 @@ const player2Name = document.getElementById('Player2')
 
 const boardGame = document.getElementsByClassName('BattleFieid')
 const boardArray = Array.from(boardGame)
+
 let currentPlayer = 'PlayerOne';
 
 const duckIMG1 = document.querySelector('#playerOneIMG')
@@ -33,6 +35,15 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
         duckIMG2.src = ducksHomes[parseInt(duckPicker)].image
       })
 
+  }
+
+  function background(currentPlayer){
+    const border = document.querySelector('#board')
+     if(currentPlayer == 'PlayerOne'){
+        border.style.property = 'border: 10px solid rgb(218, 9, 9);'
+     }else(currentPlayer == 'PlayerOne')
+      border.style.property = 'border: 10px solid rgb(9, 93, 218);'
+     
   }
 
 
@@ -61,7 +72,7 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
     })
   })
   }
-
+background()
 userNames()
 avatarSelector()
 gamePlay()
