@@ -23,6 +23,18 @@
     {
       "id": 5,
       "image": "https://static01.nyt.com/images/2018/12/02/nyregion/02xp-duck/02xp-duck-jumbo.jpg"
+    },
+    {
+      "image": "https://organicfeeds.com/wp-content/uploads/2021/03/How-To-Raise-A-Baby-Duck-scaled-1.jpg",
+      "id": 6
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu-X-zeefbAbInJjVGlTm5IMBTh5hwUoIoFQ&usqp=CAU",
+      "id": 7
+    },
+    {
+      "image": "https://i.ytimg.com/vi/J1sUN-Q9b8k/maxresdefault.jpg",
+      "id": 8
     }
   ]
 }
