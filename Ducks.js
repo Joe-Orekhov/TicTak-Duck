@@ -19,6 +19,8 @@ const player2Name = document.getElementById('Player2')
 
 
 let currentPlayer = 'PlayerOne';
+let turnCounter = 0;
+console.log(turnCounter)
 
 const duckIMG1 = document.querySelector('#playerOneIMG')
 const duckIMG2 = document.querySelector('#playerTwoIMG')
@@ -34,8 +36,6 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
 
   function avatarSelector(ducksHomes){
 
-    // const duckNumber = parseInt(ducksHomes.length)
-    // console.log(duckNumber)
       duckIMG1.addEventListener('click',()=>{ 
         const duckPicker = Math.floor(Math.random() * (ducksHomes.length)) + 0   
         duckIMG1.src = ducksHomes[parseInt(duckPicker)].image
@@ -63,10 +63,12 @@ const boardArray = Array.from(boardGame)
           // e.target.style.backgroundColor = "rgba(255, 188, 188, 0.849)"
           e.target.innerText = "X"
           currentPlayer = "PlayerTwo"
+          turnCounter = ++turnCounter
           playerWins()
         }else{
           alert('SORRY CANT PLAY THERE')
         };
+
       }else if(currentPlayer === 'PlayerTwo'){
 
         if(beforePlay == ""){
@@ -74,6 +76,7 @@ const boardArray = Array.from(boardGame)
           // e.target.style.backgroundColor = "rgb(131, 160, 255)"
           e.target.innerText = "O"
           currentPlayer = "PlayerOne"
+          turnCounter = ++turnCounter
           playerWins()
         }else{
           alert('SORRY CANT PLAY THERE')
@@ -82,6 +85,14 @@ const boardArray = Array.from(boardGame)
     })
   })
   }
+
+  // function aDRAW(){
+  //   if(turnCounter === 9){
+  //     alert('ITS A DRAW')
+  //   }else{
+  //     return 0
+  //   }
+  // }
 
   function messages(){
   const msgDiv = document.querySelector('#messages')
@@ -126,10 +137,8 @@ const BattleFieid = document.querySelectorAll(".BattleFieid")
     board.append(newGameDiv)
 
       resetButton.addEventListener("click", () => {
-        BattleFieid.forEach(square =>{
-          square.innerText = " "
-          
-      })
+        BattleFieid.forEach(square =>{square.innerText = " "})
+        turnCounter = 0;
     })
   }
 
@@ -157,6 +166,8 @@ const C3 = boardArray[8]
        A1.innerText == "X" && B2.innerText == "X" && C3.innerText == "X" ||
        A3.innerText == "X" && B2.innerText == "X" && C1.innerText == "X"){
         alert('PLAYER X WINS')
+        turnCounter = 0;
+        
         BattleFieid.forEach(square =>{square.innerText = " "})
     }else if(A1.innerText == "O" && A2.innerText == "O" && A3.innerText == "O" ||
       B1.innerText == "O" && B2.innerText == "O" && B3.innerText == "O" ||
@@ -168,11 +179,13 @@ const C3 = boardArray[8]
       A1.innerText == "O" && B2.innerText == "O" && C3.innerText == "O" ||
       A3.innerText == "O" && B2.innerText == "O" && C1.innerText == "O"){
         alert('PLAYER O WINS')
+        turnCounter = 0;
+        
         BattleFieid.forEach(square =>{square.innerText = " "})
-    }else if(A1.innerText == "O" || A1.innerText == "X"  && A2.innerText == "O" || A2.innerText == "X" && A3.innerText == "O" || A3.innerText == "X" &&
-             B1.innerText == "O" || B1.innerText == "X"  && B2.innerText == "O" || B2.innerText == "X" && B3.innerText == "O" || B3.innerText == "X" &&
-             C1.innerText == "O" || C1.innerText == "X"  && C2.innerText == "O" || C2.innerText == "X" && C3.innerText == "O" || C3.innerText == "X" ){
-              // alert('Its a Tie')
+    }else if(turnCounter === 9){
+              alert('Its a Tie')
+              BattleFieid.forEach(square =>{square.innerText = " "})
+            turnCounter = 0
      }else
      return 0       
   }
@@ -184,8 +197,9 @@ const C3 = boardArray[8]
     avatarSelector()
     gamePlay()
     NewDuckSubmit()
+    // aDRAW()
   }
-  
+
   makeEverythingWork()
 
 
