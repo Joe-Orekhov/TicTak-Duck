@@ -126,10 +126,7 @@ duckSubmit.addEventListener('click', (e)=>{
           // console.log(square)
           square.innerText = " "
       })
-      
-
     })
-
   }
 
 background()
