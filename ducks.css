@@ -8,18 +8,19 @@
 }
 
 .sideHeaders{
-  color:rgba(218, 45, 45, 0.849);
+  color:rgba(0, 0, 0, 0.849);
 }
 
 .topHeaders{
-  color: rgb(0, 132, 255);
+  color: rgb(0, 0, 0);
+
 }
 
 #board{
   margin: auto;
   width: 99%;
-  height: 99%;
-  border: 10px solid rgb(218, 9, 9)
+  height: 50%;
+  
 }
 #tickTack{
   margin: auto;
@@ -55,12 +56,29 @@
   top: 125px;
 }
 #header{
-  
-background-color: rgb(49, 49, 49);
+  background-color: rgb(49, 49, 49);
+
 }
 
 #header-title{
   text-align: center;
   color: rgb(129, 255, 255);
+  
 }
 
+#messages{
+  position: absolute;
+  width: 80%;
+  height: 40%;
+  left: 100px;
+  top: 50px;
+  background-color: crimson;
+  opacity: 0.95 ;
+  z-index:3;
+}
+#messages-content{
+  font-size: 100px;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+}

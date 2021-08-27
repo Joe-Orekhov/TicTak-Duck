@@ -2,6 +2,7 @@ fetch('http://localhost:3000/avatar')
 .then(resp=> resp.json())
 .then(ducksHomes=> {
   avatarSelector(ducksHomes)
+
 })
 
 
@@ -26,25 +27,19 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
 
   function avatarSelector(ducksHomes){
 
+    // const duckNumber = parseInt(ducksHomes.length)
+    // console.log(duckNumber)
       duckIMG1.addEventListener('click',()=>{ 
-        const duckPicker = Math.floor(Math.random() * 6) + 0   
+        const duckPicker = Math.floor(Math.random() * ducksHomes.length) + 0   
         duckIMG1.src = ducksHomes[parseInt(duckPicker)].image
       })
       duckIMG2.addEventListener('click',()=>{
-        const duckPicker = Math.floor(Math.random() * 6) + 0
-        duckIMG2.src = ducksHomes[parseInt(duckPicker)].image
+        const duckPicker = Math.floor(Math.random() * ducksHomes.length) + 0
+        const imgSrc = ducksHomes[parseInt(duckPicker)].image
+        duckIMG2.src = imgSrc
       })
 
-  }
-
-  function background(currentPlayer){
-    const border = document.querySelector('#board')
-     if(currentPlayer == 'PlayerOne'){
-        border.style.property = 'border: 10px solid rgb(218, 9, 9);'
-     }else(currentPlayer == 'PlayerOne')
-      border.style.property = 'border: 10px solid rgb(9, 93, 218);'
-     
-  }
+  }  
 
 
   function gamePlay(){
@@ -55,14 +50,22 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
       if(currentPlayer === 'PlayerOne'){
 
         if(beforePlay == ""){
+          e.target.style.color = "red"
+          e.target.style.backgroundColor = "rgba(255, 188, 188, 0.849)"
           e.target.innerText = "X"
           currentPlayer = "PlayerTwo"
         }else{
           alert('SORRY CANT PLAY THERE')
+          // const danger = document.createElement('strong')
+          // danger.innerText = "YOU CANT PLAY THERE"
+          // const headerEl = document.querySelector('#header')
+          // headerEl.append(headerEl)
         };
       }else if(currentPlayer === 'PlayerTwo'){
 
         if(beforePlay == ""){
+          e.target.style.color = "blue"
+          e.target.style.backgroundColor = "rgb(131, 160, 255)"
           e.target.innerText = "O"
           currentPlayer = "PlayerOne"
         }else{
@@ -72,10 +75,39 @@ const duckIMG2 = document.querySelector('#playerTwoIMG')
     })
   })
   }
-background()
-userNames()
-avatarSelector()
-gamePlay()
+function messages(){
+  const msgDiv = document.querySelector('#messages')
+  const msgContent = document.querySelector('#messages-content')
+  msgDiv.style.display = "none"
+}
+
+
+const newDuckImgForm = document.querySelector('#newDuckIMGS')
+const duckURLimg = newDuckImgForm.url
+const duckSubmit = newDuckImgForm.submit 
+
+duckSubmit.addEventListener('click', (e)=>{
+  e.preventDefault();
+
+  const newUrl = {
+    "image" : `${duckURLimg.value}`,
+  }
+
+  fetch('http://localhost:3000/avatar', {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newUrl),
+  })
+  .then(resp => resp.json())
+
+})
+
+userNames();
+avatarSelector();
+gamePlay();
+messages()
 // const winnigPlays =[
 //    [0, 1, 2], 
 //    [3, 4, 5], 
@@ -118,7 +150,6 @@ gamePlay()
 //   }else
 //   return
 // }
-
 
 
 //   function playerWins(e, square){
