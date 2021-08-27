@@ -5,7 +5,6 @@ fetch('http://localhost:3000/avatar')
 
 })
 
-
 const player1Name = document.getElementById('Player1')
 const player2Name = document.getElementById('Player2')
 
@@ -25,6 +24,14 @@ let currentPlayer = 'PlayerOne';
 const duckIMG1 = document.querySelector('#playerOneIMG')
 const duckIMG2 = document.querySelector('#playerTwoIMG')
 
+function background(currentPlayer){
+  const border = document.querySelector('#board')
+   if(currentPlayer == 'PlayerOne'){
+      border.style.property = 'border: 10px solid rgb(218, 9, 9);'
+   }else(currentPlayer == 'PlayerOne')
+    border.style.property = 'border: 10px solid rgb(9, 93, 218);'
+
+}
   function avatarSelector(ducksHomes){
 
     // const duckNumber = parseInt(ducksHomes.length)
@@ -104,10 +111,33 @@ duckSubmit.addEventListener('click', (e)=>{
 
 })
 
-userNames();
-avatarSelector();
-gamePlay();
-messages()
+  function newGameButton(){
+      const board = document.getElementById('board')
+      const newGameDiv = document.createElement('div') 
+      const resetButton = document.createElement('button')
+      resetButton.innerText = 'New Game'
+      resetButton.id = 'newGame'
+      newGameDiv.append(resetButton)
+      board.append(newGameDiv)
+
+      const BattleFieid = document.querySelectorAll(".BattleFieid")
+      resetButton.addEventListener("click", () => {
+        BattleFieid.forEach(square =>{
+          // console.log(square)
+          square.innerText = " "
+      })
+      
+
+    })
+
+  }
+
+background()
+newGameButton()
+userNames()
+avatarSelector()
+gamePlay()
+
 // const winnigPlays =[
 //    [0, 1, 2], 
 //    [3, 4, 5], 

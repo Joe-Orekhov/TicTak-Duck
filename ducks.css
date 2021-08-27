@@ -50,15 +50,12 @@
   left: 20px;
   top: 125px;
 }
-#Player2{
-  position: absolute;
-  right: 20px;
-  top: 125px;
-}
+
 #header{
   background-color: rgb(49, 49, 49);
 
 }
+
 
 #header-title{
   text-align: center;
